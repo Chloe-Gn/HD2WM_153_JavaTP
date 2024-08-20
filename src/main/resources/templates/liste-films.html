@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="vendor/uikit/css/uikit.min.css"/>
+    <!-- UIkit JS -->
+    <script src="vendor/uikit/js/uikit.min.js"></script>
+    <script src="vendor/uikit/js/uikit-icons.min.js"></script>
+
+    <!--    My CSS-->
+    <link rel="stylesheet" href="eni-theme.css">
+
     <meta charset="UTF-8">
     <title>Liste de films</title>
 </head>
 <body>
 <!--Bloc qui contient tous les éléments de la page-->
-<div>
+<div class="eni-common-page-padding height-100-per-cent">
 
     <!--    Titre de la page-->
     <div>
-        <h1>Tous les films</h1>
+        <h1 class="uk-width-1-1 uk-heading-large uk-text-bold eni-heading">Tous les films</h1>
     </div>
     <!--    Bloc qui contient la liste des films-->
     <div>
         <!--        Un film-->
-        <div>
-            <h2>Titre du film</h2>
-            <img src="dummy-img.jpg" alt="">
-            <p>Phrase d'accroche pour donner envie</p>
-            <button>Accéder au film</button>
+        <div class="eni-common-page-padding-top-bottom-only">
+            <img src="forrest-gump.jpg" alt="">
+            <h2 class="uk-width-1-1 uk-heading-small uk-text-bold uk-text-center eni-heading">Forrest Gump</h2>
+            <p>Paragraphe d'accroche pour donner envie. Il est long de plusieurs phrases et est ferré sur la gauche.</p>
+            <input type="button" value="Accéder au film" class="uk-width-1-1 uk-button eni-button-primary">
+
         </div>
         <!--        Un film-->
-        <div>
-            <h2>Titre du film</h2>
-            <img src="dummy-img.jpg" alt="">
-            <p>Phrase d'accroche pour donner envie</p>
-            <button>Accéder au film</button>
+        <div class="eni-common-page-padding-top-bottom-only">
+            <img src="into-the-wild.webp" alt="">
+            <h2 class="uk-width-1-1 uk-heading-small uk-text-bold uk-text-center eni-heading">Into the Wild</h2>
+            <p>Paragraphe d'accroche pour donner envie. Il est long de plusieurs phrases et est ferré sur la gauche.</p>
+            <input type="button" value="Accéder au film" class="uk-width-1-1 uk-button eni-button-primary">
         </div>
     </div>
 </div>

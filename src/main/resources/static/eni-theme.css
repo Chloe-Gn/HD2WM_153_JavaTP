@@ -1,9 +1,35 @@
 
-body {
+html, body {
         background-color: #080808;
+}
+
+html, body, .height-100-per-cent {
         height: 100%;
 }
 
-.eni-h1 {
+.eni-heading {
         text-align: center;
+        color: #ffffff;
+}
+
+.eni-button-primary {
+
+        background-color: #E50914 ;
+        color: #080808;
+        font-weight: bold;
+}
+
+.eni-home-main-img {
+        width: 200px;
+}
+
+
+.eni-common-page-padding {
+        padding : 3rem;
+
+}
+
+.eni-common-page-padding-top-bottom-only {
+        padding-top : 3rem;
+        padding-bottom: 3rem;
 }
