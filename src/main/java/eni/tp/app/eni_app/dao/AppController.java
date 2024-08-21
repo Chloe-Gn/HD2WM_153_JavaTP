@@ -1,11 +1,20 @@
-package eni.tp.app.eni_app.module1;
+package eni.tp.app.eni_app.dao;
 
+import eni.tp.app.eni_app.bll.MovieManager;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Controller
 public class AppController {
+
+    @Autowired
+    MovieManager movieManager;
 
     @GetMapping("")
     public String accueil() {
@@ -20,15 +29,15 @@ public class AppController {
     @GetMapping("liste-films")
     public String listeFilms() {
 
-        // Retourne le nom du fichier HTML à charger
-        // PS: A partir du dossier resources/templates
-        // resources/templates est la racine des fichiers HTML
         return "liste-films";
     }
 
 
+
     @GetMapping("listing-films")
-    public String listingFilms() {
+    public String listingFilms(Model model) {
+
+            model.addAttribute("movies", movieManager.selectMovies());
 
         return "listing-films";
     }
