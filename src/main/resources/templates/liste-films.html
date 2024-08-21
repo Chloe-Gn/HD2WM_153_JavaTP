@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <!--    Responsive design-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="vendor/uikit/css/uikit.min.css"/>
     <!-- UIkit JS -->
     <script src="vendor/uikit/js/uikit.min.js"></script>
     <script src="vendor/uikit/js/uikit-icons.min.js"></script>
+
+    <!-- FonAwesome CSS -->
+    <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css"/>
 
     <!--    My CSS-->
     <link rel="stylesheet" href="eni-theme.css">
@@ -17,6 +24,13 @@
 <!--Bloc qui contient tous les éléments de la page-->
 <div class="eni-common-page-padding height-100-per-cent">
 
+    <!--    Breadcrumb-->
+    <nav aria-label="Breadcrumb" class="uk-width-1-1 uk-text-center">
+        <ul class="uk-breadcrumb">
+            <li><a href="/"></a>Accueil</li>
+            <li><span aria-current="liste-films">Liste des films</span></li>
+        </ul>
+    </nav>
     <!--    Titre de la page-->
     <div>
         <h1 class="uk-width-1-1 uk-heading-large uk-text-bold eni-heading">Tous les films</h1>
@@ -28,7 +42,8 @@
             <img src="forrest-gump.jpg" alt="">
             <h2 class="uk-width-1-1 uk-heading-small uk-text-bold uk-text-center eni-heading">Forrest Gump</h2>
             <p>Paragraphe d'accroche pour donner envie. Il est long de plusieurs phrases et est ferré sur la gauche.</p>
-            <input type="button" value="Accéder au film" class="uk-width-1-1 uk-button eni-button-primary">
+            <input type="button" value="Accéder au film" onclick="window.location.href = 'description-film'"
+                   class="uk-width-1-1 uk-button eni-button-primary">
 
         </div>
         <!--        Un film-->
@@ -36,7 +51,8 @@
             <img src="into-the-wild.webp" alt="">
             <h2 class="uk-width-1-1 uk-heading-small uk-text-bold uk-text-center eni-heading">Into the Wild</h2>
             <p>Paragraphe d'accroche pour donner envie. Il est long de plusieurs phrases et est ferré sur la gauche.</p>
-            <input type="button" value="Accéder au film" class="uk-width-1-1 uk-button eni-button-primary">
+            <input type="button" value="Accéder au film" onclick="window.location.href = 'description-film'"
+                   class="uk-width-1-1 uk-button eni-button-primary">
         </div>
     </div>
 </div>

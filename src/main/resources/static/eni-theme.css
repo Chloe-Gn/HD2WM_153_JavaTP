@@ -1,6 +1,6 @@
 
 html, body {
-        background-color: #080808;
+        background-color: #222222;
 }
 
 html, body, .height-100-per-cent {
@@ -32,4 +32,8 @@ html, body, .height-100-per-cent {
 .eni-common-page-padding-top-bottom-only {
         padding-top : 3rem;
         padding-bottom: 3rem;
+}
+
+.eni-star-check{
+        color: orange;
 }

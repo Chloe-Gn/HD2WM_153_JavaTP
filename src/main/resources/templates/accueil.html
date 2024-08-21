@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--    Responsive design-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="vendor/uikit/css/uikit.min.css"/>
     <!-- UIkit JS -->
     <script src="vendor/uikit/js/uikit.min.js"></script>
     <script src="vendor/uikit/js/uikit-icons.min.js"></script>
+
+    <!-- FonAwesome CSS -->
+    <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css"/>
+
 
     <!--    My CSS-->
     <link rel="stylesheet" href="eni-theme.css">
@@ -28,10 +34,14 @@
         <H1 class="uk-width-1-1 uk-heading-large uk-text-bold eni-heading">Bienvenue dans MovieList</H1>
     </div>
 
-</div>
-<!--    Bouton d'accès au site-->
-<div>
-    <input type="button" value="Entrer dans le site" class="uk-width-1-1 uk-button eni-button-primary">
+
+    <!--    Bouton d'accès au site-->
+    <div>
+        <input type="button" value="Entrer dans le site" onclick="window.location.href = 'liste-films'"
+               class="uk-width-1-1 uk-button eni-button-primary">
+    </div>
+
+
 </div>
 </body>
 </html>
