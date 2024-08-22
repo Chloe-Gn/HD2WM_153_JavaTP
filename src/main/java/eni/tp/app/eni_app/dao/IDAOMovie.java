@@ -9,4 +9,6 @@ import java.util.List;
 public interface IDAOMovie {
 
     public List<Movie> getMovies();
+
+    public Movie getMovieFromDao(long id);
 }

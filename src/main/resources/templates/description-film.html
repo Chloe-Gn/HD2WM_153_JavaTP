@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
 
     <!--    Responsive design-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- UIkit CSS -->
-    <link rel="stylesheet" href="vendor/uikit/css/uikit.min.css"/>
+    <link rel="stylesheet" href="/vendor/uikit/css/uikit.min.css"/>
     <!-- UIkit JS -->
-    <script src="vendor/uikit/js/uikit.min.js"></script>
-    <script src="vendor/uikit/js/uikit-icons.min.js"></script>
+    <script src="/vendor/uikit/js/uikit.min.js"></script>
+    <script src="/vendor/uikit/js/uikit-icons.min.js"></script>
 
     <!-- FonAwesome CSS -->
-    <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css"/>
+    <link rel="stylesheet" href="/vendor/fontawesome/css/all.min.css"/>
 
     <!--    My CSS-->
-    <link rel="stylesheet" href="eni-theme.css">
+    <link rel="stylesheet" href="/eni-theme.css">
 
     <meta charset="UTF-8">
     <title>Fiche film</title>
@@ -34,19 +35,18 @@
     </nav>
     <!--    Titre de la page-->
     <div>
-        <h1 class="uk-width-1-1 uk-heading-large uk-text-bold eni-heading"> Forrest Gump</h1>
+        <h1 th:text="${movie.title}" class="uk-width-1-1 uk-heading-large uk-text-bold eni-heading" >Titre du film</h1>
     </div>
 
     <!--    Image du film-->
     <div>
-        <img src="forrest-gump.jpg" alt="">
+        <img th:src="@{'/'+${movie.uri}}">
     </div>
 
     <!--    Description du film-->
 
     <div>
-        <p>Quelques décennies d'histoire américaine, des années 1940 à la fin du XXème siècle, à travers le regard et
-            l'étrange odyssée d'un homme simple et pur, Forrest Gump.</p>
+        <p th:text="${movie.synopsis}">description du film</p>
     </div>
 </div>
 </body>
