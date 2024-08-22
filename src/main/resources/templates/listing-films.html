@@ -41,16 +41,19 @@
     <div th:each="movie : ${movies}"
          class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-1@s uk-margin  uk-grid">
         <div class="uk-card-media-top uk-cover-container">
-            <img src="forrest-gump.jpg" alt="" uk-cover>
+            <img th:src="@{'/'+${movie.uri}}" alt="" uk-cover>
             <canvas width="600" height="400"></canvas>
         </div>
         <div>
-            <div class="uk-card-body">
-                <h3 th:text="${movie.title}" class="uk-card-title">Titre</h3>
+            <div class="uk-card-body eni-black-background">
+                <h3 th:text="${movie.title}" class="uk-card-title eni-white-font">Titre</h3>
+                <p th:text="'Année de sortie : ' + ${movie.year}"></p>
+                <p th:text="'Durée : ' + ${movie.duration} +'min'"></p>
+                <div></div>
+
                 <div>
                     <i th:each="star: ${maxStars}" class="fa fa-star"
                        th:classappend="${movie.getStarReviews() >= star} ? 'eni-star-check' : ''"></i>
-
                 </div>
                 <p th:text="${movie.synopsis}">Description du film</p>
             </div>

@@ -37,3 +37,15 @@ html, body, .height-100-per-cent {
 .eni-star-check{
         color: orange;
 }
+
+
+
+.eni-black-background {
+        background-color: #151515;
+        color: white;
+}
+
+h3.eni-white-font.uk-card-title {
+       color: #ffffff;
+        font-weight: bold;
+}

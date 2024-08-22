@@ -3,21 +3,22 @@ package eni.tp.app.eni_app.dao;
 public class Movie {
     public long id;
     public String title;
-    private int year;
-    private int duration;
+    public int year;
+    public int duration;
     public String synopsis;
     public String uri;
     // Temporaire => plus tard les notes = associations d'avis
-    public int starReviews = 3;
+    public int starReviews;
     public String slug;
 
-    public Movie(long id, String title, int year, int duration, String synopsis, String uri) {
+    public Movie(long id, String title, int year, int duration, String synopsis, String uri, int starReviews) {
         this.id = id;
         this.title = title;
         this.year = year;
         this.duration = duration;
         this.synopsis = synopsis;
         this.uri = uri;
+        this.starReviews = starReviews;
         this.slug = title.toLowerCase().replaceAll("\\s+", "-");
     }
 
