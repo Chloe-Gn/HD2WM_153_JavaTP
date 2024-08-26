@@ -4,14 +4,13 @@ import eni.tp.app.eni_app.bll.MovieManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-
+@SessionAttributes({"loggedUser"})
 @Controller
 public class AppController {
 
@@ -72,6 +71,41 @@ public class AppController {
         // resources/templates est la racine des fichiers HTML
         return "description-film";
     }
+
+
+    @GetMapping("login")
+    public String getMethodLogin(Model model) {
+
+
+        // Tester si déjà connecté retourner page d'erreur
+        User loggedUser = (User)model.getAttribute("loggedUser");
+
+        if (loggedUser != null) {
+            return "already-logged-page";
+
+            // Le return arrête la fonction. Tout le reste ne
+            // sera pas connecté.
+        }
+
+
+        User user = new User("",1L,"");
+
+        model.addAttribute("user", user);
+
+        return "login-form";
+    }
+
+
+    @PostMapping("login")
+    public String postMethodLogin(@ModelAttribute User user, Model model) {
+
+        model.addAttribute("loggedUser", user);
+        System.out.println(String.format("l'utilisateur %s a été sauvegardé", user.email));
+
+        return "redirect:/";
+
+    }
+
 
 
 }
