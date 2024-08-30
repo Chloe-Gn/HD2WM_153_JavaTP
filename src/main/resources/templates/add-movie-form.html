@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="en"
+      layout:decorate="~{layout/base}"
+>
+<body>
+
+<!-- Surcharger le title -->
+<title layout:fragment="title">Ajouter un film</title>
+
+<!-- Surcharger le content -->
+<div layout:fragment="content">
+
+    <div class="uk-container">
+        <h1 class="uk-heading-divider uk-text-center">Ajouter un film</h1>
+
+        <!--    Formulaire-->
+        <form th:object="${movie}" method="post" action="/add-movie">
+
+            <!--            id-->
+           <input th:field="*{id}" type="hidden">
+
+            <!-- Champ title -->
+            <div class="uk-margin">
+                <label class="uk-form-label" for="title">Title</label>
+                <div class="uk-form-controls">
+                    <input th:field="*{title}" class="uk-input" type="text" placeholder="Saisir le titre du film"/>
+                    <ul th:if="${#fields.hasErrors('title')}">
+                        <li th:each="error: ${#fields.errors('title')}" th:text="${error}" class="uk-form-danger"></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- Champ note -->
+            <div class="uk-margin">
+                <label class="uk-form-label" for="note">Note</label>
+                <div class="uk-form-controls">
+                    <input th:field="*{note}" class="uk-input" type="number" placeholder="Saisir la note du film"/>
+                    <ul th:if="${#fields.hasErrors('note')}">
+                        <li th:each="error: ${#fields.errors('note')}" th:text="${error}" class="uk-form-danger"></li>
+
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- Champ année -->
+            <div class="uk-margin">
+                <label class="uk-form-label" for="year">Année</label>
+                <div class="uk-form-controls">
+                    <input th:field="*{year}" class="uk-input" type="number"
+                           placeholder="Saisir l'année de sortie du film"/>
+                    <ul th:if="${#fields.hasErrors('year')}">
+                        <li th:each="error: ${#fields.errors('year')}" th:text="${error}" class="uk-form-danger"></li>
+
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- Champ duration -->
+            <div class="uk-margin">
+                <label class="uk-form-label" for="duration">Durée du film</label>
+                <div class="uk-form-controls">
+                    <input th:field="*{duration}" class="uk-input" type="number"
+                           placeholder="Saisir la durée du film en minutes"/>
+                    <ul th:if="${#fields.hasErrors('duration')}">
+                        <li th:each="error: ${#fields.errors('duration')}" th:text="${error}"
+                            class="uk-form-danger"></li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Champ synopsis -->
+            <div class="uk-margin">
+                <label class="uk-form-label" for="synopsis">Synopsis</label>
+                <div class="uk-form-controls">
+                    <textarea th:field="*{synopsis}" type="text" class="uk-textarea"></textarea>
+                    <ul th:if="${#fields.hasErrors('synopsis')}">
+                        <li th:each="error: ${#fields.errors('synopsis')}" th:text="${error}"
+                            class="uk-form-danger"></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- Bouton submit -->
+            <div class="uk-margin">
+                <input type="submit" value="Ajouter le film" class="uk-button uk-button-primary uk-width-1-1"/>
+            </div>
+        </form>
+
+
+    </div>
+
+</div>
+</body>
+</html>

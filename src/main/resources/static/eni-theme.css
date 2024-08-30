@@ -1,51 +1,83 @@
-
-html, body {
-        background-color: #222222;
+.eni-star-check {
+    color: orange;
 }
 
-html, body, .height-100-per-cent {
-        height: 100%;
+.uk-navbar-container.eni-navbar-gradient {
 }
 
-.eni-heading {
-        text-align: center;
-        color: #ffffff;
+.eni-navbar-logo{
+    height: 30px;
 }
 
-.eni-button-primary {
-
-        background-color: #E50914 ;
-        color: #080808;
-        font-weight: bold;
+.eni-navbar-btn-padding{
+    padding: 0 1rem;
 }
 
-.eni-home-main-img {
-        width: 200px;
+.eni-movie-card {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 800px;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 4px;
+    box-shadow: 2px 3px 12px rgba(0, 0, 0, .4);
+}
+.eni-movie-card:before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(to right, rgba(40,40,60,1) 0%,rgba(40,0,60,0) 90%);
+    background-blend-mode: multiply;
+    will-change: transform;
+    z-index: 0;
 }
 
-
-.eni-common-page-padding {
-        padding : 3rem;
-
+.eni-movie-card-layer-2{
+    width: 100%;
+    height: 100%;
+    color: white;
+    box-sizing: border-box;
+    padding: 2rem;
+    padding: 2vh 3%;
+    position: absolute;
+    z-index: 1;
 }
 
-.eni-common-page-padding-top-bottom-only {
-        padding-top : 3rem;
-        padding-bottom: 3rem;
+.eni-movie-card-layer-2 .eni-desc {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
 }
 
-.eni-star-check{
-        color: orange;
+.eni-movie-card h1 {
+    color: #FFFFFF;
 }
 
-
-
-.eni-black-background {
-        background-color: #151515;
-        color: white;
+.eni-movie-card-click {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    cursor: pointer;
 }
 
-h3.eni-white-font.uk-card-title {
-       color: #ffffff;
-        font-weight: bold;
+.eni-movie-card button:hover {
+    background: rgba(255, 255, 255, .8);
+    color: black;
+    box-shadow: 0 0 10px rgba(255,255,255,.5);
+    mix-blend-mode: screen;
+}
+
+.eni-movie-card button:active {
+    transform: translateY(2px);
 }

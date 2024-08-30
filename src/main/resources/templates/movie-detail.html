@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="en"
+      layout:decorate="~{layout/base}"
+>
+<body>
+<!-- Surcharger le title -->
+<title layout:fragment="title">Detail du film</title>
+
+<!-- Je rajoute du css -->
+<div layout:fragment="css-files">
+    <link rel="stylesheet" href="/eni-movie-detail.css"/>
+</div>
+
+<!-- Surcharger le content -->
+<div layout:fragment="content">
+    <section class="eni-movie-detail-banner clearfix">
+        <div class="eni-banner-content-wrapper">
+            <div class="eni-poster">
+                <img src="/fake-movie-1.jpg" alt="Deadpool Movie Poster" class="featured_image">
+                <img src="/play-button.png" alt="Play Trailer" class="play_button">
+            </div>
+            <div class="eni-detail-content">
+                <h2 class="title" th:text="${movie.title}"></h2>
+                <div class="ratings">
+                    <i th:each="star: ${maxStars}" class="fa fa-star"
+                       th:classappend="${movie.getNote() >= star} ? 'eni-star-check' : ''"></i>
+                </div>
+
+                <p class="description" th:text="${movie.synopsis}"></p>
+
+                <p class="info"><span th:text="${movie.duration} + ' min'"></span> <span>|</span> Action, Adventure,
+                    Comedy <span>|</span> 12 February 2016</p>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>

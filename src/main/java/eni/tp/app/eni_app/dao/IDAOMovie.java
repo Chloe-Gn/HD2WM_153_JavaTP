@@ -1,14 +1,15 @@
 package eni.tp.app.eni_app.dao;
 
-import org.springframework.stereotype.Component;
+import eni.tp.app.eni_app.bo.Movie;
 
-import java.util.ArrayList;
 import java.util.List;
-
 
 public interface IDAOMovie {
 
-    public List<Movie> getMovies();
+    List<Movie> selectMovies();
 
-    public Movie getMovieFromDao(long id);
+    Movie selectMovieById(Long id);
+
+    void saveMovie(Movie movie);
+
 }
