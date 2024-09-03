@@ -17,7 +17,7 @@
 
             <!-- Champ email -->
             <div class="uk-margin">
-                <input th:field="*{email}" class="uk-input" placeholder="Saisir l'email"/>
+                <input th:field="*{email}" class="uk-input" placeholder="Saisir l'email" name="email"/>
                 <ul th:if="${#fields.hasErrors('email')}">
                     <li th:each="error: ${#fields.errors('email')}" th:text="${error}" class="uk-form-danger"></li>
                 </ul>
@@ -25,7 +25,7 @@
 
             <!-- Champ password -->
             <div class="uk-margin">
-                <input th:field="*{password}" class="uk-input" placeholder="Saisir le mot de passe" type="password"/>
+                <input th:field="*{password}" class="uk-input" placeholder="Saisir le mot de passe" type="password" name="password"/>
             </div>
 
             <!-- Bouton submit -->
